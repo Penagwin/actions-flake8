@@ -17,7 +17,7 @@ echo "::add-matcher::${ACTION_FOLDER}/flake8-matcher.json"
 
 # Create the flake8 arguments.
 echo "Running flake8 on '${INPUT_PATH}' with the following options:"
-command_args=""
+command_args="${INPUT_COMMAND_ARGS}"
 echo " - ignoring: '${INPUT_IGNORE}'"
 if [ "x${INPUT_IGNORE}" != "x" ]; then
     command_args="${command_args} --ignore ${INPUT_IGNORE}"

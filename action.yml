@@ -6,6 +6,10 @@ inputs:
     description: 'Path to run flake8 in'
     required: false
     default: ''
+  command_args:
+    description: 'Extra arguments to run flake8 with'
+    required: false
+    default: ''
   ignore:
     description: 'Skip errors and warnings (e.g. E4,W)'
     required: false
@@ -54,6 +58,7 @@ runs:
     env:
       INPUT_PATH: ${{ inputs.path }}
       INPUT_IGNORE: ${{ inputs.ignore }}
+      INPUT_COMMAND_ARGS: ${{ inputs.command_args }}
       INPUT_MAX_LINE_LENGTH: ${{ inputs.max_line_length }}
       INPUT_ONLY_WARN: ${{ inputs.only_warn }}
       INPUT_FLAKE8_VERSION: ${{ inputs.flake8_version }}
