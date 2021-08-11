@@ -53,7 +53,7 @@ runs:
       fi
       pip install flake8${flake8_version} ${plugins}
     shell: bash
-  - run: ${{ github.action_path }}/action/entrypoint.sh
+  - run: ${{ GITHUB_ACTION_PATH }}/action/entrypoint.sh
     shell: bash
     env:
       INPUT_PATH: ${{ inputs.path }}
